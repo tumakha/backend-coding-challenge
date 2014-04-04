@@ -26,7 +26,7 @@ These are optional, but are a chance to show off useful skills you might have. I
 Questions?
 ----------
 ##### I don’t want my current employer to see this!
-Bitbucket allows you to create a private fork for free. You’ll have to give our account - `alchemytec`ODS - access to your fork so we can see it. No-one other than you and us will be able to see the fork. You can do the same with Github, but you’ll have to give them some money.
+Bitbucket allows you to create a private fork for free. You’ll have to give our account - `alchemytec` - access to your fork so we can see it. No-one other than you and us will be able to see the fork. You can do the same with Github, but you’ll have to give them some money.
 
 ##### Why aren’t you using Pull Requests to review this?
 Pull Requests back to public repos are public; not cool if you’re currently employed elsewhere. If you don’t mind our conversation being out in the open, feel free to open a PR.
