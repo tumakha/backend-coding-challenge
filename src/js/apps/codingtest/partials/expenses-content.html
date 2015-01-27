@@ -17,7 +17,9 @@
 			</li>
 			<li>
 				<label>Reason</label>
-				<textarea ng-required="true" ng-model="newExpense.reason" placeholder="why oh why?"></textarea>
+				<div auto-resize-form resize-watches="newExpense.reason" resize-sources="textarea" class="auto-resize">
+					<textarea ng-required="true" ng-model="newExpense.reason" ng-trim="false" placeholder="why oh why?"></textarea>
+				</div>
 			</li>
 			<li>
 				<label></label>

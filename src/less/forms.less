@@ -40,3 +40,54 @@ Form specific styles
 		}
 	}
 }
+
+form {
+	margin-bottom: 30px;
+	
+	li {
+		margin-bottom: 15px;
+		
+		input {
+			border-bottom: 1px solid @light-text-color;
+			padding-bottom: 5px;
+		}
+
+		label {
+			text-align: right;
+			display: inline-block;
+			width: 150px;
+			margin-right: 10px;
+			vertical-align: top;
+			
+			@media (max-width: @mobile-table-width) {
+				width: 20%;
+			}
+		}
+		
+		input {
+			@media (max-width: @mobile-table-width) {
+				width: 70%;
+			}
+		}
+		
+		div.auto-resize {
+			display: inline-block;
+			width: 350px;
+			
+			@media (max-width: @mobile-table-width) {
+				width: 70%;
+			}
+			
+			textarea {
+				width: 350px;
+				height: 30px;
+				overflow: hidden;
+				padding: 5px;
+				
+				@media (max-width: @mobile-table-width) {
+					width: 70%;
+				}
+			}
+		}
+	}
+}
