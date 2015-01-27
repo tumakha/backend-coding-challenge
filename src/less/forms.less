@@ -1,0 +1,42 @@
+/******************************************************************************************
+
+Form specific styles
+
+******************************************************************************************/
+
+.filter-container {
+	padding: 10px 20px;
+	border-bottom: 1px solid @light-text-color;
+	text-align: left;
+	display: inline-block;
+	
+	@media (max-width: @max-mobile-width) {
+		padding: 10px 0;
+	}
+
+	& > div {
+		display: inline-block;
+		font-size: @default-font-size + 4px;
+
+		label {
+			display: block;
+			font-size: @default-font-size - 2px;
+			font-weight: @weight-book;
+			color: @medium-text-color;
+			text-transform: uppercase;
+		}
+		
+		padding: 10px;
+
+		&.wide {
+			width: 240px;
+		}
+		
+		&.date {
+			width: 140px;
+		}
+		
+		&.action {
+		}
+	}
+}

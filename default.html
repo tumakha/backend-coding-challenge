@@ -1,60 +1,30 @@
 <!DOCTYPE html>
-<html ng-app="expensesApp">
+<html>
 	<head>
 		<title>
-			Expenses
+			AlchemyTec - Back End Coding Test
 		</title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<meta http-equiv="content-language" content="en-gb" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="styles/layout.css" />
-		<link rel="stylesheet" type="text/css" href="styles/jquery-ui.css" />
-		<script type="text/javascript" src="scripts/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="scripts/underscore-min.js"></script>
-		<script type="text/javascript" src="scripts/angular.min.js"></script>
-		<script type="text/javascript" src="scripts/date.js"></script>
-		<script type="text/javascript" src="scripts/restangular.min.js"></script>
-		<script type="text/javascript" src="scripts/expenses.js"></script>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+		<link name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="/static/css/main.min.css" />
+		<script type="text/javascript" src="/static/js/main.min.js"></script>
+		<script type="text/javascript" src="/static/js/codingtest.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 	</head>
-	<body ng-controller="ExpensesCtrl">
-		<h1>Expenses</h1>
-		
-		<h2>Add an expense</h2>
-		<form name="expensesform">
-			<ul>
-				<li>
-					<label>Date</label>
-					<input type="text" ng-required="true" ng-model="newExpense.date" ui-date="dateOptions" placeholder="dd/mm/yyyy" />
-				</li>
-				<li>
-					<label>Amount</label>
-					<input type="text" ng-required="true" ng-model="newExpense.amount" placeholder="00.00" />
-				</li>
-				<li>
-					<label>Reason</label>
-					<textarea ng-required="true" ng-model="newExpense.reason" placeholder="why oh why?"></textarea>
-				</li>
-				<li>
-					<label></label>
-					<button ng-click="saveExpense()">Save Expense</button> <button ng-click="clearExpense()">cancel</button>
-				</li>
-			</ul>
-		</form>
-		
-		<h2>Submitted expenses</h2>
-		
-		<table>
-			<tr>
-				<th>Date</th>
-				<th>Amount (inc. VAT)</th>
-				<th>Reson</th>
-			</tr>
-			<tr ng-repeat="expense in expenses">
-				<td>{{expense.date | date:'dd MMM yyyy'}}</td>
-				<td>{{expense.amount | currency:"&pound;"}}</td>
-				<td>{{expense.reason}}</td>
-			</tr>
-		</table>
+	<body>
+		<div id="header">
+			<ng-include src=" 'navbar.html' "></ng-include>
+			<ng-include src=" 'navbar-subbar.html' "></ng-include>
+		</div>
+		<div id="tab-header">
+			<ng-include src=" 'tab-header.html' "></ng-include>
+		</div>
+		<div id="content">
+			<ng-view class="slide-view"></ng-view>
+		</div>
 	</body>
 </html>
