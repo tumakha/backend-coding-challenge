@@ -36,8 +36,7 @@
 		<div ng-repeat="expense in expenses" class="body-row">
 			<div>{{expense.date | date:'dd MMM yyyy'}}</div>
 			<div class="figures">{{expense.amount | currency:"&pound;"}}</div>
-			<div>{{expense.reason}}</div>
-			<div class="figures">{{ line.net | number:2 }}</div>
+			<div class="figures">{{expense.reason}}</div>
 		</div>
 	</div>
 </div>
