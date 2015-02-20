@@ -22,7 +22,7 @@ app.config(["$routeProvider", function($routeProvider) {
 app.run(["$rootScope", function($rootScope) {
 	// Add app button
 	$rootScope.appSections = $rootScope.appSections || [];
-	$rootScope.appSections.push({ title: "Expenses", image: "/static/img/icon-generic.png", app: "expenses" });
+	$rootScope.appSections.push({ title: "Expenses", image: "static/img/icon-generic.png", app: "expenses" });
 	
 	// Configure tab sections
 	$rootScope.tabSections = $rootScope.tabSections || {};
