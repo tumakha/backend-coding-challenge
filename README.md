@@ -20,6 +20,8 @@ Extra Credit
 There are rendering issues in Firefox. See if you can fix them.
 
 
+Questions
+---------
 ##### What frameworks can I use?
 That’s entirely up to you, as long as they’re OSS. We’ll ask you to explain the choices you’ve made.
 
