@@ -1,6 +1,6 @@
 Goal
 ====
-Produce a simple web-app backend to complement the supplied front-end code.
+Produce a simple web-app backend to complement the supplied front-end code. Note that the front-end renders nicely in Chrome but has some issues in Firefox. This is deliberate - see the 'Extra Credit' section.
 
 Mandatory Work
 --------------
@@ -17,25 +17,14 @@ Give our account `alchemytec` access to your fork, and send us an email when you
 
 Extra Credit
 ------------
-These are optional, but are a chance to show off useful skills you might have. If it's outside your experience, no stress.
+There are rendering issues in Firefox. See if you can fix them.
 
-1. Provide a deployment mechanism/package for your app so we don't have to build it to run it. Docker, vagrant, or something else entirely?
-2. Style the app to get close to, or match the image `optional_mockup.png`.
-
-
-Questions?
-----------
-##### I don’t want my current employer to see this!
-Bitbucket allows you to create a private fork for free. You’ll have to give our account - `alchemytec` - access to your fork so we can see it. No-one other than you and us will be able to see the fork. You can do the same with Github, but you’ll have to give them some money.
-
-##### Why aren’t you using Pull Requests to review this?
-Pull Requests back to public repos are public; not cool if you’re currently employed elsewhere. If you don’t mind our conversation being out in the open, feel free to open a PR.
 
 ##### What frameworks can I use?
 That’s entirely up to you, as long as they’re OSS. We’ll ask you to explain the choices you’ve made.
 
 ##### What application servers can I use?
-Anyone you like, as long as it’s available OSS. You’ll have to justify your decision. We use Tomcat internally. 
+Anyone you like, as long as it’s available OSS. You’ll have to justify your decision. We use dropwizard and Tomcat internally. 
 
 ##### What database should I use?
 MySQL or PostgreSQL. We use MySQL in-house.
