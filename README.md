@@ -1,6 +1,6 @@
 Goal
 ====
-Produce a simple web-app backend to complement the supplied front-end code. Note that the front-end renders nicely in Chrome but has some issues in Firefox. This is deliberate - see the 'Extra Credit' section.
+Produce a simple web-app backend to complement the supplied front-end code.
 
 Mandatory Work
 --------------
@@ -17,16 +17,15 @@ Give our account `alchemytec` access to your fork, and send us an email when you
 
 Extra Credit
 ------------
-There are rendering issues in Firefox. See if you can fix them.
-
+Calculate the VAT client-side as the user enters a new expense, before they save the expense to the database.
 
 Questions
 ---------
 ##### What frameworks can I use?
-That’s entirely up to you, as long as they’re OSS. We’ll ask you to explain the choices you’ve made.
+That’s entirely up to you, as long as they’re OSS. We’ll ask you to explain the choices you’ve made. Please pick something you're familiar with, as you'll need to be able to discuss it.
 
 ##### What application servers can I use?
-Anyone you like, as long as it’s available OSS. You’ll have to justify your decision. We use dropwizard and Tomcat internally. 
+Anyone you like, as long as it’s available OSS. You’ll have to justify your decision. We use dropwizard and Tomcat internally. Please pick something you're familiar with, as you'll need to be able to discuss it.
 
 ##### What database should I use?
 MySQL or PostgreSQL. We use MySQL in-house.
