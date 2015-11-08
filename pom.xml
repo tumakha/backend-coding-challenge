@@ -114,11 +114,9 @@
                 <configuration>
                     <webResources>
                         <resource>
-                            <directory>static</directory>
-                        </resource>
-                        <resource>
                             <directory>./</directory>
                             <includes>
+                                <include>static/**</include>
                                 <include>default.html</include>
                             </includes>
                         </resource>
