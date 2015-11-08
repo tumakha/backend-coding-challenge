@@ -1,25 +1,37 @@
 package ua.tumakha.yuriy.webapp.alchemytec.domain;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+/**
+ * @author Yuriy Tumakha
+ */
+@Entity
+@Table(name = "EXPENSE")
 public class Expense {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     /**
      */
     @NotNull
     //@DateTimeFormat(style = "M-")
+    @Column(nullable = false)
     private Date date;
 
     /**
      */
+    @NotNull
+    @Column(nullable = false)
     private Float amount;
 
     /**
      */
     @NotNull
+    @Column(nullable = false)
     private String reason;
 
     public Long getId() {
