@@ -85,7 +85,7 @@ public class ExpenseServiceTest {
         expenseService.delete(expense1);
 
         expense1 = expenseService.findById(expense.getId());
-        assertNull("Expense still exist after deletion", expense1);
+        assertNull("Expense still exists after deletion", expense1);
     }
 
     private Expense buildExpense(Float amount, Date date, String reason) {
@@ -99,7 +99,7 @@ public class ExpenseServiceTest {
 
     private Expense findOneExpense() {
         List<Expense> expenses = expenseService.findAll();
-        assertTrue("Test expenses not exist.", expenses.size() > 1);
+        assertEquals("Expenses count should be equal 2", 2, expenses.size());
         return expenses.get(0);
     }
 
