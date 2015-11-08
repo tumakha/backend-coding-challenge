@@ -9,8 +9,14 @@ import java.util.List;
  */
 public interface ExpenseService {
 
-    public List<Expense> findAll();
+    List<Expense> findAll();
 
-    public Expense save(Expense expense);
+    Expense create(Expense expense);
+
+    Expense update(Expense expense);
+
+    Expense findById(Long expenseId);
+
+    void delete(Expense expense);
 
 }

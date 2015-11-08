@@ -21,8 +21,21 @@ public class ExpenseServiceImpl implements ExpenseService {
         return expenseRepository.findAll();
     }
 
-    public Expense save(Expense expense) {
+    public Expense create(Expense expense) {
+        expense.setId(null);
         return expenseRepository.save(expense);
+    }
+
+    public Expense update(Expense expense) {
+        return expenseRepository.save(expense);
+    }
+
+    public Expense findById(Long expenseId) {
+        return expenseRepository.findOne(expenseId);
+    }
+
+    public void delete(Expense expense) {
+        expenseRepository.delete(expense.getId());
     }
 
 }
