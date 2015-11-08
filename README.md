@@ -1,3 +1,67 @@
+# AlchemyTec
+AlchemyTec - Back End Coding Challenge
+
+## Installation
+
+### 1. Create MySQL or MariaDB database "alchemytest"
+Go to project directory backend-coding-challenge/ and run command  
+
+    mysql -u root -p < ./sql/01-create-db.sql       
+
+Update db host in backend-coding-challenge/src/main/resources/application.properties if you don't use localhost
+
+### 2. Build Maven project
+Go to project directory backend-coding-challenge/ and run command   
+
+    mvn clean package
+
+Web application saved to backend-coding-challenge/target/alchemytec.war
+
+### 3. Start Jetty and run webapp on http://localhost:8888/ 
+Go to project directory backend-coding-challenge/ and run command   
+
+    mvn jetty:run
+
+Web application can be deployed to container like Jetty 9 or WildFly 9.
+Container should supports Servlet 3.0 API and Java 8.
+
+## JSON API
+API WADL <http://localhost:8888/v2/api-docs>     
+API UI <http://localhost:8888/swagger-ui.html>     
+
+### Get all expenses
+
+    curl http://localhost:8888/expenses
+    
+### Get expense by ID
+
+    curl http://localhost:8888/expenses/2
+    
+### Create expense
+
+    curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" -d "{
+      \"amount\": 100,
+      \"date\": 1446415200000,
+      \"reason\": \"Reason\",
+      \"vat\": 20
+    }" "http://localhost:8888/expenses"
+    
+### Update expense
+
+    curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
+      \"id\": 11,
+      \"amount\": 100,
+      \"date\": 1446415200000,
+      \"reason\": \"New Reason\",
+      \"vat\": 20
+    }" "http://localhost:8888/expenses/11"
+    
+### Delete expense
+
+    curl -X DELETE --header "Accept: application/json" "http://localhost:8888/expenses/11"
+
+
+
 Goal
 ====
 Produce a simple web-app backend to complement the supplied front-end code.
