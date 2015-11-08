@@ -115,9 +115,9 @@
                     <httpConnector>
                         <port>8888</port>
                     </httpConnector>
-                    <!--<webAppConfig>-->
-                        <!--<contextPath>/${project.name}</contextPath>-->
-                    <!--</webAppConfig>-->
+                    <webAppConfig>
+                        <contextPath>/${project.name}</contextPath>
+                    </webAppConfig>
                 </configuration>
             </plugin>
         </plugins>
