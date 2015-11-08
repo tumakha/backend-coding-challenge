@@ -9,11 +9,13 @@ import ua.tumakha.yuriy.webapp.alchemytec.service.ExpenseService;
 
 import java.util.List;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 /**
  * @author Yuriy Tumakha
  */
 @RestController
-@RequestMapping("/expenses")
+@RequestMapping(value = "/expenses", produces = {APPLICATION_JSON_VALUE})
 public class ExpensesController {
 
     @Autowired
@@ -31,7 +33,7 @@ public class ExpensesController {
     }
 
     @RequestMapping(value = "/{expenseId}", method = RequestMethod.GET)
-    public ResponseEntity<Expense> getExpenseById(@PathVariable("expenseId") Long expenseId) {
+    public ResponseEntity<Expense> findExpenseById(@PathVariable("expenseId") Long expenseId) {
         Expense expense = expenseService.findById(expenseId);
         if (expense == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

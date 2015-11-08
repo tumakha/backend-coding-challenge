@@ -20,6 +20,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <server.port>8888</server.port>
         <spring.version>4.2.2.RELEASE</spring.version>
         <spring.security.version>4.0.3.RELEASE</spring.security.version>
     </properties>
@@ -103,7 +104,7 @@
                 <version>9.3.5.v20151012</version>
                 <configuration>
                     <httpConnector>
-                        <port>8888</port>
+                        <port>${server.port}</port>
                     </httpConnector>
                     <!--<webAppConfig>-->
                         <!--<contextPath>/${project.name}</contextPath>-->

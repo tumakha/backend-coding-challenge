@@ -23,11 +23,11 @@ public class ExpenseServiceImpl implements ExpenseService {
 
     public Expense create(Expense expense) {
         expense.setId(null);
-        return expenseRepository.save(expense);
+        return save(expense);
     }
 
     public Expense update(Expense expense) {
-        return expenseRepository.save(expense);
+        return save(expense);
     }
 
     public Expense findById(Long expenseId) {
@@ -36,6 +36,11 @@ public class ExpenseServiceImpl implements ExpenseService {
 
     public void delete(Expense expense) {
         expenseRepository.delete(expense.getId());
+    }
+
+    private Expense save(Expense expense) {
+        expense.setVat(expense.getAmount() * 0.2f);
+        return expenseRepository.save(expense);
     }
 
 }

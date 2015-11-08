@@ -32,12 +32,14 @@
 	<div class="list-table expenses-data">
 		<div class="header-row">
 			<div>Date</div>
-			<div class="figures">Amount (inc. VAT)</div>
+            <div class="figures">Amount (inc. VAT)</div>
+            <div class="figures">VAT</div>
 			<div class="figures">Reson</div>
 		</div>
 		<div ng-repeat="expense in expenses" class="body-row">
 			<div>{{expense.date | date:'dd MMM yyyy'}}</div>
 			<div class="figures">{{expense.amount | currency:"&pound;"}}</div>
+            <div class="figures">{{expense.vat | currency:"&pound;"}}</div>
 			<div class="figures">{{expense.reason}}</div>
 		</div>
 	</div>

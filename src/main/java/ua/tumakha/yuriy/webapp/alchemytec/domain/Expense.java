@@ -12,24 +12,21 @@ import java.util.Date;
 public class Expense {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    /**
-     */
     @NotNull
-    //@DateTimeFormat(style = "M-")
     @Column(nullable = false)
     private Date date;
 
-    /**
-     */
     @NotNull
     @Column(nullable = false)
     private Float amount;
 
-    /**
-     */
+    @NotNull
+    @Column(name = "VAT", nullable = false)
+    private Float vat;
+
     @NotNull
     @Column(nullable = false)
     private String reason;
@@ -56,6 +53,14 @@ public class Expense {
 
     public void setAmount(Float amount) {
         this.amount = amount;
+    }
+
+    public Float getVat() {
+        return vat;
+    }
+
+    public void setVat(Float vat) {
+        this.vat = vat;
     }
 
     public String getReason() {
