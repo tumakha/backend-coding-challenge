@@ -17,7 +17,7 @@ Go to project directory backend-coding-challenge/ and run command
 
 Web application saved to backend-coding-challenge/target/alchemytec.war
 
-### 3. Start Jetty and run webapp on http://localhost:8888/ 
+### 3. Start Jetty and run webapp on http://localhost:8888/alchemytec/ 
 Go to project directory backend-coding-challenge/ and run command   
 
     mvn jetty:run
@@ -26,16 +26,16 @@ Web application can be deployed to container like Jetty 9 or WildFly 9.
 Container should supports Servlet 3.0 API and Java 8.
 
 ## JSON API
-API WADL <http://localhost:8888/v2/api-docs>     
-API UI <http://localhost:8888/swagger-ui.html>     
+API WADL <http://localhost:8888/alchemytec/v2/api-docs>     
+API UI <http://localhost:8888/alchemytec/swagger-ui.html>     
 
 ### Get all expenses
 
-    curl http://localhost:8888/expenses
+    curl http://localhost:8888/alchemytec/expenses
     
 ### Get expense by ID
 
-    curl http://localhost:8888/expenses/2
+    curl http://localhost:8888/alchemytec/expenses/2
     
 ### Create expense
 
@@ -44,7 +44,7 @@ API UI <http://localhost:8888/swagger-ui.html>
       \"date\": 1446415200000,
       \"reason\": \"Reason\",
       \"vat\": 20
-    }" "http://localhost:8888/expenses"
+    }" "http://localhost:8888/alchemytec/expenses"
     
 ### Update expense
 
@@ -54,11 +54,11 @@ API UI <http://localhost:8888/swagger-ui.html>
       \"date\": 1446415200000,
       \"reason\": \"New Reason\",
       \"vat\": 20
-    }" "http://localhost:8888/expenses/11"
+    }" "http://localhost:8888/alchemytec/expenses/11"
     
 ### Delete expense
 
-    curl -X DELETE --header "Accept: application/json" "http://localhost:8888/expenses/11"
+    curl -X DELETE --header "Accept: application/json" "http://localhost:8888/alchemytec/expenses/11"
 
 
 
