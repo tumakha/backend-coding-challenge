@@ -1,5 +1,7 @@
 package ua.tumakha.yuriy.webapp.alchemytec.web.controller;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @RequestMapping(value = "/expenses", produces = {APPLICATION_JSON_VALUE})
 public class ExpensesController {
+
+    private static final Logger logger = LogManager.getLogger(ExpensesController.class);
 
     @Autowired
     ExpenseService expenseService;
@@ -36,6 +40,7 @@ public class ExpensesController {
     public ResponseEntity<Expense> findExpenseById(@PathVariable("expenseId") Long expenseId) {
         Expense expense = expenseService.findById(expenseId);
         if (expense == null) {
+            logger.warn("Not found expence by ID = " + expenseId);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(expense, HttpStatus.OK);
@@ -44,6 +49,7 @@ public class ExpensesController {
     @RequestMapping(value = "/{expenseId}", method = RequestMethod.PUT)
     public ResponseEntity<Expense> updateExpense(@PathVariable("expenseId") Long expenseId, @RequestBody Expense expense) {
         if (expenseService.findById(expenseId) == null) {
+            logger.warn("Not found expence by ID = " + expenseId);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         expense.setId(expenseId);
@@ -55,6 +61,7 @@ public class ExpensesController {
     public ResponseEntity<Expense> deleteExpense(@PathVariable("expenseId") Long expenseId) {
         Expense expense = expenseService.findById(expenseId);
         if (expense == null) {
+            logger.warn("Not found expence by ID = " + expenseId);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         expenseService.delete(expense);

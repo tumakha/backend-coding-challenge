@@ -71,4 +71,25 @@ public class Expense {
         this.reason = reason;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(getClass().getSimpleName());
+        sb.append("(");
+        if (id != null) {
+            sb.append("id=");
+            sb.append(id);
+            sb.append(",");
+        }
+        sb.append("date=");
+        sb.append(date);
+        sb.append(",amount=");
+        sb.append(amount);
+        sb.append(",VAT=");
+        sb.append(vat);
+        sb.append(",reason=");
+        sb.append(reason);
+        sb.append(")");
+        return sb.toString();
+    }
+
 }
