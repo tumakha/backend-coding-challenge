@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.tumakha.yuriy.webapp.alchemytec.domain.Expense;
+import ua.tumakha.yuriy.webapp.alchemytec.exception.ExpenseNotFoundException;
 import ua.tumakha.yuriy.webapp.alchemytec.service.ExpenseService;
 
 import java.util.List;
@@ -39,19 +40,13 @@ public class ExpensesController {
     @RequestMapping(value = "/{expenseId}", method = RequestMethod.GET)
     public ResponseEntity<Expense> findExpenseById(@PathVariable("expenseId") Long expenseId) {
         Expense expense = expenseService.findById(expenseId);
-        if (expense == null) {
-            logger.warn("Not found expence by ID = " + expenseId);
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        assertExpense(expenseId, expense);
         return new ResponseEntity<>(expense, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{expenseId}", method = RequestMethod.PUT)
     public ResponseEntity<Expense> updateExpense(@PathVariable("expenseId") Long expenseId, @RequestBody Expense expense) {
-        if (expenseService.findById(expenseId) == null) {
-            logger.warn("Not found expence by ID = " + expenseId);
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        assertExpense(expenseId, expenseService.findById(expenseId));
         expense.setId(expenseId);
         Expense updatedExpense = expenseService.update(expense);
         return new ResponseEntity<>(updatedExpense, HttpStatus.OK);
@@ -60,12 +55,17 @@ public class ExpensesController {
     @RequestMapping(value = "/{expenseId}", method = RequestMethod.DELETE)
     public ResponseEntity<Expense> deleteExpense(@PathVariable("expenseId") Long expenseId) {
         Expense expense = expenseService.findById(expenseId);
-        if (expense == null) {
-            logger.warn("Not found expence by ID = " + expenseId);
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        assertExpense(expenseId, expense);
         expenseService.delete(expense);
         return new ResponseEntity<>(expense, HttpStatus.OK);
+    }
+
+    private void assertExpense(Long expenseId, Expense expense) {
+        if (expense == null) {
+            String message = "Not found expense by ID = " + expenseId;
+            logger.warn(message);
+            throw new ExpenseNotFoundException(message);
+        }
     }
 
 }
